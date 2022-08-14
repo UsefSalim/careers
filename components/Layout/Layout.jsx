@@ -1,9 +1,9 @@
-import React from 'react';
-import { Footer } from 'components';
+import { Footer, Nav } from 'components';
 
 const Layout = ({ children }) => {
   return (
     <>
+      <Nav />
       {children}
       <Footer></Footer>
     </>

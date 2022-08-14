@@ -1,7 +1,6 @@
-import * as React from 'react';
-import Head from 'next/head';
 import * as Home from 'components/Home';
 import { Layout } from 'components/Layout';
+import Head from 'next/head';
 
 export default function HomePage() {
   return (

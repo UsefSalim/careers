@@ -1,4 +1,5 @@
 const path = require('path');
+const isProd = process.env.NEXT_PUBLIC_APP_ENV === 'production';
 module.exports = {
   reactStrictMode: true,
   sassOptions: {
@@ -6,8 +7,13 @@ module.exports = {
   },
   swcMinify: true,
   images: {
-    domains: ['api.workspace.sobrus.com', 'api.workspace.sobrus.ovh'],
+    domains: isProd ? ['api.sobrus.com'] : ['api.sobrus.ovh'],
   },
   path: '/_next/image',
   loader: 'default',
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
