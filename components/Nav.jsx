@@ -97,12 +97,12 @@ const Nav = () => {
 
           <ul className="nav__icons">
             <li className="nav__icon nav__icon--facebook">
-              <a href="https://facebook.com">
+              <a href="https://facebook.com" aria-label="Facebook icon">
                 <FaFacebookF className="facebook" />
               </a>
             </li>
             <li className="nav__icon nav__icon--linkedin">
-              <a>
+              <a href="https://facebook.com" aria-label="Linkedin icon">
                 <FaLinkedinIn className="linkedin" />
               </a>
             </li>

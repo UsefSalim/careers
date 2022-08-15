@@ -5,10 +5,7 @@ import Head from 'next/head';
 export default function HomePage() {
   return (
     <Layout>
-      <Head>
-        <title>Sobrus Careers</title>
-        <meta name="description" content="description"></meta>
-      </Head>
+      <Head></Head>
       <Home.Header></Home.Header>
       <Home.Main></Home.Main>
     </Layout>
