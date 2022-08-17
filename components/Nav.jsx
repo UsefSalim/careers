@@ -1,7 +1,7 @@
 import Image from 'next/future/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 const Nav = () => {
   const router = useRouter();
@@ -113,4 +113,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default memo(Nav);

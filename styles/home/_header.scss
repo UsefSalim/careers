@@ -1,31 +1,38 @@
 .header {
     background: #effbfd;
 
-
     &__container {
         max-width: var(--max-width);
         // position: relative;
         margin: 0 auto;
 
+        @media only screen and (max-width: 1100px) {
+            margin: 0 20px;
 
+        }
     }
 
     &__bgContainer {
         max-width: 1600px;
         position: relative;
-        margin: 0 auto;
         height: 492px;
+        margin: 0 auto;
+
 
         &::before {
             content: "";
             background-image: linear-gradient(to bottom, #21b2d4, #21b2d4), url("/assets/header.svg");
             background-repeat: no-repeat;
             background-blend-mode: screen;
-            width: 30.8125rem;
-            height: 30.8rem;
+            width: 557px;
+            height: 554px;
             position: absolute;
             right: 0;
             border-radius: 0 0 0 50px;
+
+            @media only screen and (max-width: 840px) {
+                display: none
+            }
         }
 
         &::after {
@@ -36,6 +43,15 @@
             position: absolute;
             bottom: -45px;
             left: 0;
+
+            @media only screen and (max-width: 840px) {
+                // right: 0;
+                // left: initial;
+                // top: 100px;
+                // bottom: initial;
+                margin-left: -30px;
+
+            }
         }
     }
 
@@ -45,6 +61,25 @@
         align-items: center;
         padding-top: 92px;
         padding-bottom: 73px;
+
+        @media only screen and (max-width: 840px) {
+            padding-top: 58px;
+            padding-bottom: 25px;
+
+            margin-bottom: 0px;
+
+            &::after {
+                content: "";
+                background-image: url("/assets/mini__logo__mobile.png");
+                width: 68.65px;
+                height: 58.04px;
+                position: absolute;
+                top: 130px;
+                right: 0;
+                margin-right: -35px;
+
+            }
+        }
 
         span {
             z-index: 10;
@@ -57,11 +92,27 @@
             letter-spacing: normal;
             text-align: left;
             color: #151010;
+
+            @media only screen and (max-width: 840px) {
+                text-align: center;
+                font-size: 30px;
+                margin: 0 auto;
+            }
+
+            @media only screen and (max-width: 500px) {
+
+                font-size: 25px;
+
+            }
         }
 
         img {
             z-index: 10;
             margin-left: 5.9vw;
+
+            @media only screen and (max-width: 840px) {
+                display: none;
+            }
         }
     }
 
@@ -69,6 +120,314 @@
         display: flex;
         justify-content: space-between;
         grid-gap: 20px;
+
+        @media only screen and (max-width: 840px) {
+            flex-wrap: wrap;
+        }
+
+        .input {
+
+            &__offre {
+                flex: 1;
+                position: relative;
+
+                @media only screen and (max-width: 840px) {
+                    width: 100%;
+                }
+
+                .close__button {
+                    position: absolute;
+                    right: 18px;
+                    top: 16px;
+                    width: 30px;
+                    height: 30px;
+                    // padding: 18px 18px 19px 19px;
+                    background-color: #F5F5F5;
+                    border: none;
+                    border-radius: 50%;
+                    // margin-left: 20px;
+                    z-index: 10;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            &__offreDataContainer {
+                position: absolute;
+                background-color: #fff;
+                top: 43px;
+                right: 0;
+                left: 0;
+                margin-top: 20px;
+                padding: 16px 0;
+                border: 1px solid #E6E6E6;
+                max-height: 320px;
+                overflow-y: auto;
+                border-radius: 0 0 32.5px 32.5px;
+                animation: container .6s;
+                z-index: 12;
+
+                @keyframes container {
+                    from {
+                        top: 10px;
+                        max-height: 120px;
+
+                    }
+
+                    to {
+                        top: 43px;
+                        max-height: 320px;
+                    }
+
+                }
+
+                // direction: rtl;
+                .offre {
+                    padding: 9px 41px;
+                    cursor: pointer;
+                    transition: background-color .2s ease;
+                    opacity: 1;
+
+                    &:hover {
+                        background-color: #F4FAFC;
+                        opacity: .9;
+                    }
+                }
+
+                .offre__jobName {
+                    font-size: 15px;
+                    text-transform: capitalize;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #fff;
+                    border-radius: 40px;
+                    margin-block: 10px 40px;
+                }
+
+
+
+                &::-webkit-scrollbar-thumb {
+                    background: #21B2D4;
+                    border-radius: 40px;
+                    background-clip: padding-box;
+                    border-radius: 9999px;
+                }
+
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+            }
+
+            &__typeDataContainer {
+                position: absolute;
+                background-color: #fff;
+                top: 43px;
+                right: 0;
+                left: 0;
+                margin-top: 20px;
+                padding: 16px 0;
+                border: 1px solid #E6E6E6;
+                max-height: 320px;
+                overflow-y: auto;
+                border-radius: 0 0 32.5px 32.5px;
+                animation: container .6s;
+                z-index: 12;
+
+                @keyframes container {
+                    from {
+                        top: 10px;
+                        max-height: 120px;
+                    }
+
+                    to {
+                        top: 43px;
+                        max-height: 320px;
+                    }
+
+                }
+
+                // direction: rtl;
+                .type {
+                    padding: 9px 30px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #F4FAFC;
+                    }
+                }
+
+                .type__jobName {
+                    font-size: 15px;
+                    text-transform: capitalize;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #fff;
+                    border-radius: 40px;
+                    margin-block: 10px 40px;
+                }
+
+
+
+                &::-webkit-scrollbar-thumb {
+                    background: #21B2D4;
+                    border-radius: 40px;
+                    background-clip: padding-box;
+                    border-radius: 9999px;
+                }
+
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+
+                /* Hide the browser's default checkbox */
+                .container input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                }
+
+                .container {
+                    display: block;
+                    position: relative;
+                    padding-left: 35px;
+                    // margin-bottom: 12px;
+                    cursor: pointer;
+                    // font-size: 22px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                /* Create a custom checkbox */
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 24px;
+                    width: 24px;
+                    background-color: #fff;
+                    border: 1px solid #000000;
+                    border-radius: 5px;
+                    transition: background-color .4s ease
+                }
+
+                /* On mouse-over, add a grey background color */
+                .container:hover input~.checkmark {
+                    background-color: #fff;
+                    border: 1px solid #21B2D4;
+                }
+
+                /* When the checkbox is checked, add a blue background */
+                .container input:checked~.checkmark {
+                    background-color: #21B2D4;
+                    border: none;
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+
+                /* Show the checkmark when checked */
+                .container input:checked~.checkmark:after {
+                    display: block;
+                }
+
+                /* Style the checkmark/indicator */
+                .container .checkmark:after {
+                    left: 10px;
+                    top: 5px;
+                    width: 5px;
+                    height: 12px;
+                    border: solid #fff;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+
+                    animation: rotate 0.6;
+
+                    @keyframes rotate {
+                        from {
+                            transform: rotate(0deg);
+                        }
+
+                        to {
+                            transform: rotate(45deg);
+                        }
+
+                    }
+                }
+            }
+
+            &__type {
+                position: relative;
+                -webkit-touch-callout: none;
+                /* iOS Safari */
+                -webkit-user-select: none;
+                /* Safari */
+                -khtml-user-select: none;
+                /* Konqueror HTML */
+                -moz-user-select: none;
+                /* Old versions of Firefox */
+                -ms-user-select: none;
+                /* Internet Explorer/Edge */
+                user-select: none;
+
+                @media only screen and (max-width: 840px) {
+                    width: 100%;
+                }
+
+                .up__button {
+                    position: absolute;
+                    right: 18px;
+                    top: 20px;
+                    z-index: 10;
+                    cursor: pointer;
+                }
+
+                .down__button {
+                    position: absolute;
+                    right: 18px;
+                    top: 16px;
+                    z-index: 10;
+                    cursor: pointer;
+                    transform: rotate(180deg);
+                    animation: rotate .4;
+
+                    @keyframes rotate {
+                        from {
+                            transform: rotate(0deg);
+                        }
+
+                        to {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+
+            }
+        }
     }
 
     &__input {
@@ -77,20 +436,47 @@
         box-shadow: 9px 43px 56px 0 rgba(0, 0, 0, 0.03);
         background-color: #fff;
         border: none;
+        caret-color: var(--primary);
+        font-weight: 500;
+        text-transform: capitalize;
 
         &--offre {
-            padding: 22px 46px;
-            flex: 1;
+            padding: 22px 41px;
+            width: 100%;
+        }
+
+        &--offreOpen {
+            border-radius: 32.5px 32.5px 0 0;
+            border: 1px solid #E6E6E6;
+
         }
 
         &--type {
-            padding: 22px 30px;
+            padding: 17px 30px;
+            cursor: pointer;
+            width: 330px;
+
+            @media only screen and (max-width: 840px) {
+                width: 100%;
+            }
+
+        }
+
+        &--typeOpen {
+            border-radius: 32.5px 32.5px 0 0;
+            border: 1px solid #E6E6E6;
 
         }
     }
 
     &__inputContainer {
         z-index: 10;
+        display: flex;
+
+        @media only screen and (max-width: 840px) {
+            width: 100%;
+            flex-wrap: wrap;
+        }
     }
 
     &__button {
@@ -102,6 +488,30 @@
         border-radius: 50%;
         margin-left: 20px;
         z-index: 10;
+        cursor: pointer;
+
+        @media only screen and (max-width: 840px) {
+            display: none
+        }
+
+        &--mobile {
+            display: none;
+
+            @media only screen and (max-width: 840px) {
+                display: block;
+                background-color: #21b2d4;
+                border: none;
+                border-radius: 50px;
+                margin-left: 0px;
+                z-index: 10;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 25px;
+                color: #fff;
+                font-size: 17px;
+                padding: 21px;
+            }
+        }
 
         svg {
             line-height: 0;

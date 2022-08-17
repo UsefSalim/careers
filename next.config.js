@@ -1,7 +1,7 @@
 const path = require('path');
 const isProd = process.env.NEXT_PUBLIC_APP_ENV === 'production';
 module.exports = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

@@ -7,14 +7,20 @@
     font-family: var(--font-family);
 }
 
+
+
 *:focus {
     outline: none;
 }
 
 *::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(0, 0, 0, .33);
+    color: rgba(0, 0, 0, .33) !important;
     opacity: 1;
+    text-transform: lowercase !important;
+    font-weight: 500 !important;
+
+
     /* Firefox */
 }
 
@@ -58,6 +64,7 @@ body {
     font-weight: 400;
     line-height: 1.75;
     color: var(--black);
+    overflow-x: hidden;
 
 }
 
@@ -124,6 +131,8 @@ ul {
 .careers {
     @import "layouts/_Nav";
     @import "home/header";
+    @import "home/main";
+    @import "components/card";
 }
 
 /* buttons */

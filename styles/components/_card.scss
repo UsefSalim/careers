@@ -1,0 +1,104 @@
+.card {
+    width: 330px;
+    height: 304px;
+    border: 1px solid #C9C9C9;
+    border-radius: 20px;
+    margin-bottom: 45px;
+    cursor: pointer;
+    padding: 34px 40px;
+    // transition: all .3;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 840px) {
+        margin-bottom: 10px;
+    }
+
+
+    &:hover {
+        background-color: #21B2D4;
+        border: none;
+        animation: bg .6s both;
+
+        .card__date,
+        .card__title,
+        .card__info,
+        .card__info svg {
+            color: #FFFFFF
+        }
+
+        @keyframes bg {
+            from {
+                background-color: rgba(33, 178, 212, .2);
+                // padding: 0 45px;
+                border-radius: 10px;
+                transform: scale(1.05);
+            }
+
+            to {
+
+                background-color: #21B2D4;
+                // padding: 34px 45px;
+                border-radius: 20px;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__badg {
+        padding: 6px 18px;
+        background-color: #F1FFD1;
+        color: #76AA00;
+        font-weight: 700;
+        font-size: 13px;
+        border-radius: 50px;
+        margin-bottom: 12px;
+    }
+
+    &__date {
+        font-size: 14px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #575757;
+        margin-bottom: 12px;
+        // transition: all .9 transition;
+
+
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #404040;
+        margin-bottom: 70px;
+        transition: all .9;
+        margin-top: -8px;
+
+
+    }
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        grid-gap: 40px;
+        text-align: center;
+
+        p {
+            margin-bottom: 0;
+        }
+
+
+    }
+}
