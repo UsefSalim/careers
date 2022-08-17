@@ -4,9 +4,9 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import 'styles/global.scss';
 NProgress.configure({
-  minimum: 0.3,
+  minimum: 0.2,
   easing: 'ease',
-  speed: 800,
+  speed: 200,
   showSpinner: false,
 });
 

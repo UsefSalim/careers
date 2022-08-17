@@ -1,19 +1,15 @@
 /* eslint-disable no-undef */
 import * as Home from 'components/Home';
+import JobsHeader from 'components/Jobs/Header';
 import { Layout } from 'components/Layout';
 import { BASE_URL, DEPARTEMENTS__URL, JOBS__URL } from 'env';
 import { useFormik } from 'formik';
 import { useSwr } from 'hooks';
 import { useState } from 'react';
 import { getData } from 'services';
-
-export default function HomePage({ data }) {
+const Jobs = ({ data }) => {
   const { res: jobs } = useSwr(`${BASE_URL}/${JOBS__URL}`, 'jobs', data?.jobs);
-  const { res: departments } = useSwr(
-    `${BASE_URL}/${DEPARTEMENTS__URL}`,
-    'departments',
-    data?.departments
-  );
+
   const [filtredJob, setFiltredJob] = useState(jobs);
   const { handleChange, values, handleSubmit, setFieldValue } = useFormik({
     enableReinitialize: true,
@@ -60,10 +56,9 @@ export default function HomePage({ data }) {
       );
     },
   });
-  // console.log(filtredJob);
   return (
     <Layout>
-      <Home.Header
+      <JobsHeader
         {...{
           jobs,
           handleChange,
@@ -71,25 +66,11 @@ export default function HomePage({ data }) {
           handleSubmit,
           setFieldValue,
         }}
-      ></Home.Header>
-      <Home.Main
-        {...{ jobs: filtredJob, page: 'main', pagination: 9 }}
-      ></Home.Main>
+      />
+      <Home.Main {...{ jobs: filtredJob, pagination: 12 }}></Home.Main>
     </Layout>
   );
-}
-// export async function getStaticPaths() {
-//   const { data } = await AXIOS.get('/public/jobs');
-//   console.log(data);
-//   return {
-//     paths: data?.jobs?.map((d) => {
-//       return {
-//         params: { id: d.id },
-//       };
-//     }),
-//     fallback: 'blocking',
-//   };
-// }
+};
 
 export async function getStaticProps() {
   const [jobs, departments] = await Promise.all([
@@ -104,3 +85,5 @@ export async function getStaticProps() {
     revalidate: 3600,
   };
 }
+
+export default Jobs;

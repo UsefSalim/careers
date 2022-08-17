@@ -2,9 +2,9 @@ import Card from 'components/Card';
 import { Fragment, useState } from 'react';
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from 'react-icons/md';
 import ReactPaginate from 'react-paginate';
-const Main = ({ jobs }) => {
+const Main = ({ jobs, page, pagination }) => {
   const [pageNumber, setPageNumber] = useState(0);
-  const jobParPage = 9;
+  const jobParPage = pagination;
   const pagesVisited = pageNumber * jobParPage;
 
   const displayJobs = jobs
@@ -23,7 +23,7 @@ const Main = ({ jobs }) => {
   return (
     <main className="main">
       <section className="main__container">
-        <div className="main__parag">Offres actuelles</div>
+        {page && <div className="main__parag">Offres actuelles</div>}
         <div className="main__cards">{displayJobs}</div>
         <ReactPaginate
           previousLabel={<MdOutlineNavigateBefore />}
