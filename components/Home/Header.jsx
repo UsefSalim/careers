@@ -124,9 +124,9 @@ const InputOffre = ({
           handleChoises(e);
         }}
         value={values.job}
-        onFocus={() => {
-          setOpenInputOffre(true);
-        }}
+        // onFocus={() => {
+        //   setOpenInputOffre(true);
+        // }}
       />
       {values?.job?.length > 0 && (
         <div

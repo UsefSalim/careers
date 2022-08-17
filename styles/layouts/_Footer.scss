@@ -1,0 +1,118 @@
+.footer {
+    background-color: #21B2D4;
+    margin-top: 48px;
+    color: #fff;
+
+
+
+
+    &__container {
+        padding: 74px 20px;
+        max-width: var(--max-width);
+        margin: 0 auto;
+
+
+        @media only screen and (max-width: 550px) {
+            padding: 47px 20px;
+
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        grid-gap: 32px;
+        padding: 0 54px;
+
+        @media only screen and (max-width: 550px) {
+            padding: 0;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        margin-bottom: 21px;
+        font-weight: 500;
+
+        &--contact {
+            @media only screen and (max-width: 550px) {
+                display: none;
+            }
+        }
+
+    }
+
+    &__item {
+        font-size: 16px;
+        margin-bottom: 16px;
+        color: #fff;
+        transition: all .4s;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(255, 255, 255, .7);
+        }
+
+    }
+
+    &__contactimage--mobile {
+        display: none
+    }
+
+    &__button {
+        border: 2px solid #FFF;
+        border-radius: 50px;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 42px 19px 42px;
+        grid-gap: 10px;
+        background-color: transparent;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .4s;
+
+        &:hover {
+            background: #fff;
+            color: #21B2D4;
+
+            .footer__contactimage {
+                display: none
+            }
+
+            .footer__contactimage--mobile {
+                display: block
+            }
+        }
+
+        span {
+            margin-top: 2px;
+        }
+    }
+
+    &__logo {
+        margin-top: 48px;
+        border-top: 1px solid #fff;
+        position: relative
+    }
+
+    &__img {
+        position: absolute;
+        top: -27px;
+        right: calc(50% - 97px);
+        background-color: #21B2D4;
+        padding: 0 24px;
+    }
+
+    &__droit {
+        font-size: 12px;
+        font-weight: 300;
+        text-align: center;
+        margin: 48px auto 0 auto
+    }
+
+}
